@@ -2024,6 +2024,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1734461435}
   - component: {fileID: 1734461434}
+  - component: {fileID: 1734461436}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Untagged
@@ -2049,13 +2050,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2.42
+  m_Height: 2.25
   m_Radius: 0.45
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1.12, z: 0}
+  m_Center: {x: 0, y: 1.27, z: 0}
 --- !u!4 &1734461435
 Transform:
   m_ObjectHideFlags: 0
@@ -2072,6 +2073,19 @@ Transform:
   - {fileID: 1710082694}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1734461436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734461433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5358935d3934ea49afade1de9f9739d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyController
+  gravity: -20
 --- !u!1 &1790631539
 GameObject:
   m_ObjectHideFlags: 0
