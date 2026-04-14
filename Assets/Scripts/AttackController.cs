@@ -38,16 +38,16 @@ public class AttackController : MonoBehaviour
 
 
 
-            // Gọi Trigger "360" trong Animator
-            // Animator sẽ chuyển sang animation tấn công (360)
-            anim.SetTrigger("360");
+            // Gọi Trigger "xoay" trong Animator
+            // Animator sẽ chuyển sang animation tấn công (xoay)
+            anim.SetTrigger("xoay");
         }
     }
 
 
     // Hàm này KHÔNG tự chạy
     // Nó được gọi thông qua Animation Event
-    // Gắn Event này ở CUỐI animation 360
+    // Gắn Event này ở CUỐI animation xoay
     public void EndSlash()
     {
         // Kết thúc trạng thái chém

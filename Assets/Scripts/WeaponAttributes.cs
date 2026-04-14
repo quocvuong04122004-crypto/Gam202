@@ -1,23 +1,61 @@
 using UnityEngine;
 
 
+// public class WeaponAttributes : MonoBehaviour
+// {
+//     public AttributesManager atm;
+
+
+//     private void OnTriggerEnter(Collider other)
+//     {
+//         if (other.transform.root == transform.root) return;
+
+
+//         // Player đánh Enemy
+//         if (other.CompareTag("Enemy"))
+//         {
+//             atm.DealDamage(other.gameObject);
+//         }
+
+
+//         // Enemy đánh Player
+//         if (other.CompareTag("Player"))
+//         {
+//             Debug.Log("Enemy chem Player");
+
+
+//             atm.DealDamage(other.gameObject); //  DÙNG CHUNG
+//         }
+//     }
+// }
+
+
 public class WeaponAttributes : MonoBehaviour
 {
-    // Attributes của người chơi (Player)
-    // Kéo Player (Ninja) có AttributesManager vào đây
-    public AttributesManager atm;
+    private AttributesManager atm;
+
+
+    private void Awake()
+    {
+        atm = GetComponentInParent<AttributesManager>();
+    }
 
 
     private void OnTriggerEnter(Collider other)
     {
-        // Kiểm tra va chạm với Enemy
+        if (other.transform.root == transform.root) return;
+
+
         if (other.CompareTag("Enemy"))
         {
-            // GỌI DealDamage để áp dụng:
-            // - Damage cơ bản
-            // - Critical Hit
-            // - Logic chết
             atm.DealDamage(other.gameObject);
+        }
+
+
+        if (other.CompareTag("Player"))
+        {
+            atm.DealDamage(other.gameObject);
+            Debug.Log("Enemy chem Player");
         }
     }
 }
